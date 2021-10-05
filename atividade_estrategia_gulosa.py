@@ -1,7 +1,7 @@
 # Análise e Projeto de Algoritmos
 # AC3: Ciência da Computação
 #
-# Email Impacta: __________@aluno.faculdadeimpacta.com.br
+# Email Impacta: carolina.vieira@aluno.faculdadeimpacta.com.br
 
 
 def seleciona_aulas(horarios_inicio, horarios_fim):
@@ -56,10 +56,13 @@ def seleciona_aulas(horarios_inicio, horarios_fim):
 	Ou seja, considerando o exemplo acima, a função deve retornar a lista: [0, 1, 3, 4],
 	representando as aulas 0, 1, 3 e 4.
 	"""
-	pass
-
-
-
+	lista_retorno = []
+	for i in range(len(horarios_fim)):
+		if i == 0:
+			lista_retorno.append(i)
+		if horarios_inicio[i] >= horarios_fim[lista_retorno[-1]]:
+			lista_retorno.append(i)
+	return lista_retorno
 
 def troco_menores_moedas(carteira, valor_troco):
 	"""
