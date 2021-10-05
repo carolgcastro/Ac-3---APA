@@ -149,6 +149,17 @@ def troco_menores_moedas(carteira, valor_troco):
 		Tivemos que remover duas moedas, nessa ordem: 10, 5.
 		Assim, sobraram as moedas de: [5, 5, 5, 10, 10, 25], que será o resultado da função.
 	"""
-	pass
+	lista_troco = []
+	soma = 0
+	for m in carteira:
+		if soma <= valor_troco:
+			soma += m
+			lista_troco.append(m)
+	for i in range(len(lista_troco), 0, -1):
+		if(soma - lista_troco[i-1]) >= valor_troco:
+			aux = lista_troco.pop(i-1)
+			soma -= aux
+
+	return lista_troco
 
 
